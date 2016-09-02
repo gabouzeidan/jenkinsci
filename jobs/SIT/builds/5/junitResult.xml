@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<result plugin="junit@1.2-beta-4">
+  <suites>
+    <suite>
+      <file>/var/lib/jenkins/jobs/SIT/workspace/report/integration-reports.xml</file>
+      <name>Mocha Tests</name>
+      <duration>0.288</duration>
+      <timestamp>Fri, 02 Sep 2016 13:09:15 GMT</timestamp>
+      <cases>
+        <case>
+          <duration>0.283</duration>
+          <className>express rest api server</className>
+          <testName>getting the index page of the service</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>express rest api server</className>
+          <testName>testing authentication</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>0.288</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>

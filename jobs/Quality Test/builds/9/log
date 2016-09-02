@@ -1,0 +1,41 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mJenkins Admin
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/lib/jenkins/jobs/Quality Test/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://cesarvr@bitbucket.org/bankaudigroup/platform.git # timeout=10
+Fetching upstream changes from https://cesarvr@bitbucket.org/bankaudigroup/platform.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username cesarvr # timeout=10
+ > git config --local credential.helper store --file=/tmp/git1229965317065074643.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://cesarvr@bitbucket.org/bankaudigroup/platform.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse refs/remotes/origin/master_ci^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master_ci^{commit} # timeout=10
+Checking out Revision d26ae6ed162e5efbc3a77609327b5f3afc333246 (refs/remotes/origin/master_ci)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d26ae6ed162e5efbc3a77609327b5f3afc333246
+ > git rev-list d26ae6ed162e5efbc3a77609327b5f3afc333246 # timeout=10
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+MONGO_URL=mongodb://user:user@172.30.162.73:27017/sampledb
+MONGODB_USER=user
+MONGODB_PASSWORD=user
+MONGODB_DATABASE=sampledb
+MONGODB_ADMIN_PASSWORD=admin
+DATABASE_SERVICE_NAME=172.30.162.73
+
+[EnvInject] - Variables injected successfully.
+[workspace] $ /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/node6-aleph/bin/node /tmp/hudson2630751398518217424.js
+build number =>  9
+path =>  /var/lib/jenkins/jobs/Quality Test/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson2823509614182872906.sh
++ npm install
++ npm test
+
+> platform@1.0.0 test /var/lib/jenkins/jobs/Quality Test/workspace
+> mocha --recursive -R xunit test/dao/common test/controllers/ > report/test-reports.xml
+
+Recording test results
+Finished: SUCCESS

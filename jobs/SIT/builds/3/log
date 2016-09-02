@@ -1,0 +1,30 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mJenkins Admin
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/lib/jenkins/jobs/SIT/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://cesarvr@bitbucket.org/bankaudigroup/platform.git # timeout=10
+Fetching upstream changes from https://cesarvr@bitbucket.org/bankaudigroup/platform.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username cesarvr # timeout=10
+ > git config --local credential.helper store --file=/tmp/git7660694966650115522.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://cesarvr@bitbucket.org/bankaudigroup/platform.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0ca2a38dc8a62cc1703549cbfbcda2f848686913 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0ca2a38dc8a62cc1703549cbfbcda2f848686913
+ > git rev-list 0ca2a38dc8a62cc1703549cbfbcda2f848686913 # timeout=10
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+HOST=http://platform-sit-platform-ci.dapps.alephlb.com/
+
+[EnvInject] - Variables injected successfully.
+[workspace] $ /bin/sh -xe /tmp/hudson2978266690971000515.sh
++ npm install
++ ./node_modules/.bin/mocha --reporter=xunit --reporter-options output=report/integration-reports.xml test/integration/
+http://platform-sit-platform-ci.dapps.alephlb.com/
+Recording test results
+Finished: SUCCESS

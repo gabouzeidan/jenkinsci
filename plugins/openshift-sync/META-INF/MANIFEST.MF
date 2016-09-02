@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jdyson
+Build-Jdk: 1.8.0_101
+Extension-Name: openshift-sync
+Specification-Title: Syncs OpenShift BuildConfigs with Jenkins jobs
+Specification-Vendor: Red Hat
+Implementation-Vendor: Red Hat
+Implementation-Title: openshift-sync
+Implementation-Version: 0.0.12
+Group-Id: io.fabric8.jenkins.plugins
+Short-Name: openshift-sync
+Long-Name: OpenShift Sync
+Url: https://wiki.jenkins-ci.org/display/JENKINS/OpenShift+Sync+Plugin
+Plugin-Version: 0.0.12
+Hudson-Version: 1.642.2
+Jenkins-Version: 1.642.2
+PluginFirstClassLoader: true
+Plugin-Dependencies: pipeline-rest-api:1.4,git:2.4.2,kubernetes:0.6,wo
+ rkflow-job:2.0,workflow-cps:2.0
+Plugin-Developers: Jimmi Dyson:jimmi:jimmidyson@gmail.com
+

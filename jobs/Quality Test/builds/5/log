@@ -1,0 +1,44 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mJenkins Admin
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/lib/jenkins/jobs/Quality Test/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://cesarvr@bitbucket.org/bankaudigroup/platform.git # timeout=10
+Fetching upstream changes from https://cesarvr@bitbucket.org/bankaudigroup/platform.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username cesarvr # timeout=10
+ > git config --local credential.helper store --file=/tmp/git2289847526362686578.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://cesarvr@bitbucket.org/bankaudigroup/platform.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse refs/remotes/origin/master_ci^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master_ci^{commit} # timeout=10
+Checking out Revision d26ae6ed162e5efbc3a77609327b5f3afc333246 (refs/remotes/origin/master_ci)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d26ae6ed162e5efbc3a77609327b5f3afc333246
+ > git rev-list d26ae6ed162e5efbc3a77609327b5f3afc333246 # timeout=10
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+MONGO_URL=mongodb://user:user@172.30.162.73:27017/sampledb
+
+[EnvInject] - Variables injected successfully.
+ERROR: Build step failed with exception
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.IllegalArgumentException: NodeJS Installation not found : 
+	at jenkins.plugins.nodejs.NodeJSPlugin.findInstallationByName(NodeJSPlugin.java:42)
+	at jenkins.plugins.nodejs.NodeJsCommandInterpreter.perform(NodeJsCommandInterpreter.java:76)
+	at jenkins.plugins.nodejs.NodeJsCommandInterpreter.perform(NodeJsCommandInterpreter.java:42)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:782)
+	at hudson.model.Build$BuildExecution.build(Build.java:205)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
+	at hudson.model.Run.execute(Run.java:1738)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+Build step 'Execute NodeJS script' marked build as failure
+Recording test results
+ERROR: Step ‘Publish JUnit test result report’ failed: Test reports were found but none of them are new. Did tests run? 
+For example, /var/lib/jenkins/jobs/Quality Test/workspace/report/test-reports.xml is 24 min old
+
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE
