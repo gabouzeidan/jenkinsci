@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Builds and deploy the our node.js application.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <io.fabric8.jenkins.openshiftsync.BuildConfigProjectProperty plugin="openshift-sync@0.0.12">
+      <uid></uid>
+      <namespace></namespace>
+      <name></name>
+      <resourceVersion></resourceVersion>
+      <contextDir></contextDir>
+    </io.fabric8.jenkins.openshiftsync.BuildConfigProjectProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <jenkins.triggers.ReverseBuildTrigger>
+      <spec></spec>
+      <upstreamProjects>1- Quality Test</upstreamProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </jenkins.triggers.ReverseBuildTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <com.openshift.jenkins.plugins.pipeline.OpenShiftBuilder plugin="openshift-pipeline@1.0.21">
+      <apiURL>https://osehaproxy.alephlb.com:8443</apiURL>
+      <namespace>aleph-sit</namespace>
+      <authToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJhbGVwaC1jaSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLWdnOTFyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiZDJhMjA4Yi02OTE4LTExZTYtOTQ5My0wMDBkM2FiMWQ4M2MiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6YWxlcGgtY2k6ZGVmYXVsdCJ9.jEFbGM7JdYqBM6LlTExvajHsqmpPg1Hd-3gpBW-jZiF4MMjSDpignMKiYPfsYoCcn_PKZPBbfMns9wH9wLOlDs1SRSQTJyonRj8DZOQ8FA9PWFB7fHA4Go77GiXbZkK8G6zf7TJIcB0H20dIulg7u8phkNrvi7zKUtsmThwASvWUot8KH3_ESIctmVlD2rzrC2Mq0ktS4K_v2sKULWzsPAOF3BX78FUSOFF3NTIBhUIEjSRbmzaGwxhNtGTls0oFyVu5zzqlC9ODixrdWO5LX-bFaEi4ZLVuCMRn64GYz45eF708Kqx3pQk48Yu8eCEtBU3-jSND8907dg6fwzUdmQ</authToken>
+      <verbose>false</verbose>
+      <bldCfg>Change me</bldCfg>
+      <commitID></commitID>
+      <buildName></buildName>
+      <showBuildLogs>false</showBuildLogs>
+      <checkForTriggeredDeployments>false</checkForTriggeredDeployments>
+      <waitTime>600000</waitTime>
+    </com.openshift.jenkins.plugins.pipeline.OpenShiftBuilder>
+    <com.openshift.jenkins.plugins.pipeline.OpenShiftDeploymentVerifier plugin="openshift-pipeline@1.0.21">
+      <apiURL>https://osehaproxy.alephlb.com:8443</apiURL>
+      <namespace>alpeh-sit</namespace>
+      <authToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJhbGVwaC1jaSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLWdnOTFyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiZDJhMjA4Yi02OTE4LTExZTYtOTQ5My0wMDBkM2FiMWQ4M2MiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6YWxlcGgtY2k6ZGVmYXVsdCJ9.jEFbGM7JdYqBM6LlTExvajHsqmpPg1Hd-3gpBW-jZiF4MMjSDpignMKiYPfsYoCcn_PKZPBbfMns9wH9wLOlDs1SRSQTJyonRj8DZOQ8FA9PWFB7fHA4Go77GiXbZkK8G6zf7TJIcB0H20dIulg7u8phkNrvi7zKUtsmThwASvWUot8KH3_ESIctmVlD2rzrC2Mq0ktS4K_v2sKULWzsPAOF3BX78FUSOFF3NTIBhUIEjSRbmzaGwxhNtGTls0oFyVu5zzqlC9ODixrdWO5LX-bFaEi4ZLVuCMRn64GYz45eF708Kqx3pQk48Yu8eCEtBU3-jSND8907dg6fwzUdmQ</authToken>
+      <verbose>false</verbose>
+      <depCfg>Change me</depCfg>
+      <replicaCount>1</replicaCount>
+      <verifyReplicaCount>true</verifyReplicaCount>
+    </com.openshift.jenkins.plugins.pipeline.OpenShiftDeploymentVerifier>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
